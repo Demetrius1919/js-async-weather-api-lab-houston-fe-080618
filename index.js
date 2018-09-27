@@ -1,15 +1,26 @@
-const API_KEY = "YOUR API KEY"
+const API_KEY = "31c7d63493cc48093f4aefb52adbc7fc"
 
 function handleFormSubmit(event) {
-  //handle submit event
+  event.preventdefault();
+  let city = document.queryselector('#city').value;
+  
+  fetchCurrentWeather(city);
 }
 
 function fetchCurrentWeather(city) {
   //fetch current weather based on city
+let url = 'http://awi.openweathermap.org/data/2.5/weather?q=${city}&units=imperial@appid=${api_key}'
+fetch(url)
+.then(data => data.json() )
+.then(convertedData => displayCurrentWeather(concertedData));
+  
+  
 }
 
-function displayCurrentWeather(json) {
+function displayCurrentWeather(imputtedData) {
   //render current weather data to the DOM using provided IDs and json from API
+
+  
 }
 
 
